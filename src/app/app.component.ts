@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ClassService } from './class.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'MohammadFauzanArramadhan-TI2A';
+  nama = "Mohammad Fauzan Arramadhan";
+  alamat = "Jl. Kalimosodo 12 no 9";
+  hob = "Hobby saya belajar"
+  hari = Date.now();
+
+  hobby : any [];
+
+  constructor(private classServe:ClassService){}
+  ngOnInit(){
+    this.hobby = this.classServe.getFauzan();
+  }
 }
